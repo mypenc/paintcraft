@@ -1,21 +1,44 @@
 
 ==== TAIL ====
-[1m[92m   Compiling[0m craft-winprint-gdi v0.1.0 (https://github.com/storytold/winprint.rs?rev=417ac3c4d14d3da5485a99c7d5ce8f05664ec312#417ac3c4)
-[1m[92m   Compiling[0m craft-print v0.1.0 (https://github.com/storytold/craft-libs?rev=3d37da389a3618ab9b76109da11416e9ca4ea719#3d37da38)
-[1m[92m   Compiling[0m type-map v0.5.1
-[1m[92m   Compiling[0m tempfile v3.27.0
+    Building arm64-v8a (aarch64-linux-android)
+[1m[92m    Updating[0m crates.io index
+[1m[92m     Locking[0m 12 packages to latest Rust 1.95 compatible versions
+[1m[92m      Adding[0m cesu8 v1.1.0
+[1m[92m      Adding[0m jni v0.21.1 [1m[33m(available: v0.22.4)[0m
+[1m[92m      Adding[0m windows-sys v0.45.0
+[1m[92m      Adding[0m windows-targets v0.42.2
+[1m[92m      Adding[0m windows_aarch64_gnullvm v0.42.2
+[1m[92m      Adding[0m windows_aarch64_msvc v0.42.2
+[1m[92m      Adding[0m windows_i686_gnu v0.42.2
+[1m[92m      Adding[0m windows_i686_msvc v0.42.2
+[1m[92m      Adding[0m windows_x86_64_gnu v0.42.2
+[1m[92m      Adding[0m windows_x86_64_gnullvm v0.42.2
+[1m[92m      Adding[0m windows_x86_64_msvc v0.42.2
+[1m[92m      Adding[0m winit v0.30.13 (/home/runner/work/paintcraft/paintcraft/android/vendor/winit)
+[1m[92m   Compiling[0m photocraft-cms v0.15.1 (/home/runner/work/paintcraft/paintcraft/crates/cms)
+[1m[92m   Compiling[0m photocraft-geom v0.15.1 (/home/runner/work/paintcraft/paintcraft/crates/geom)
+[1m[92m   Compiling[0m photocraft-text v0.15.1 (/home/runner/work/paintcraft/paintcraft/crates/text)
+[1m[92m   Compiling[0m photocraft-codecs v0.15.1 (/home/runner/work/paintcraft/paintcraft/crates/codecs)
+[1m[92m   Compiling[0m photocraft-psd v0.15.1 (/home/runner/work/paintcraft/paintcraft/crates/psd)
+[1m[92m   Compiling[0m photocraft-color v0.15.1 (/home/runner/work/paintcraft/paintcraft/crates/color)
+[1m[92m   Compiling[0m photocraft-raster v0.15.1 (/home/runner/work/paintcraft/paintcraft/crates/raster)
+[1m[92m   Compiling[0m photocraft-doc v0.15.1 (/home/runner/work/paintcraft/paintcraft/crates/doc)
+[1m[92m   Compiling[0m winit v0.30.13 (/home/runner/work/paintcraft/paintcraft/android/vendor/winit)
+[1m[92m   Compiling[0m photocraft-algo v0.15.1 (/home/runner/work/paintcraft/paintcraft/crates/algo)
+[1m[92m   Compiling[0m photocraft-vector v0.15.1 (/home/runner/work/paintcraft/paintcraft/crates/vector)
+[1m[92m   Compiling[0m photocraft-compose v0.15.1 (/home/runner/work/paintcraft/paintcraft/crates/compose)
+[1m[92m   Compiling[0m photocraft-format v0.15.1 (/home/runner/work/paintcraft/paintcraft/crates/format)
+[1m[92m   Compiling[0m photocraft-paint v0.15.1 (/home/runner/work/paintcraft/paintcraft/crates/paint)
+[1m[92m   Compiling[0m photocraft-raw v0.15.1 (/home/runner/work/paintcraft/paintcraft/crates/raw)
+[1m[92m   Compiling[0m photocraft-affinity v0.15.1 (/home/runner/work/paintcraft/paintcraft/crates/affinity)
 [1m[92m   Compiling[0m photocraft-io v0.15.1 (/home/runner/work/paintcraft/paintcraft/crates/io)
-[1m[92m   Compiling[0m photocraft-plugins v0.15.1 (/home/runner/work/paintcraft/paintcraft/crates/plugins)
 [1m[92m   Compiling[0m photocraft-ops v0.15.1 (/home/runner/work/paintcraft/paintcraft/crates/ops)
-[1m[92m   Compiling[0m chrono v0.4.45
+[1m[92m   Compiling[0m photocraft-plugins v0.15.1 (/home/runner/work/paintcraft/paintcraft/crates/plugins)
 [1m[92m   Compiling[0m photocraft-ipp v0.15.1 (/home/runner/work/paintcraft/paintcraft/crates/ipp)
 [1m[92m   Compiling[0m photocraft-engine v0.15.1 (/home/runner/work/paintcraft/paintcraft/crates/engine)
 [1m[92m   Compiling[0m egui-wgpu v0.36.2
 [1m[92m   Compiling[0m egui-winit v0.36.2
-[1m[92m   Compiling[0m cesu8 v1.1.0
-[1m[92m   Compiling[0m pollster v1.0.1
 [1m[92m   Compiling[0m eframe v0.36.2
-[1m[92m   Compiling[0m jni v0.21.1
 [1m[92m   Compiling[0m paintcraft-ui v0.15.1 (/home/runner/work/paintcraft/paintcraft/crates/paintcraft-ui)
 [1m[33mwarning[0m[1m: unused import: `BAR`[0m
   [1m[94m--> [0mcrates/paintcraft-ui/src/editor.rs:22:31
@@ -37,26 +60,3 @@
 [1m[33mwarning[0m: `paintcraft-ui` (lib) generated 1 warning
 [1m[91merror[0m: could not compile `paintcraft-ui` (lib) due to 1 previous error; 1 warning emitted
 [1m[33mwarning[0m: build failed, waiting for other jobs to finish...
-note: If the build failed due to a missing target, you can run this command:
-note: 
-note:     rustup target install aarch64-linux-android
-
-Welcome to Gradle 9.8.1!
-
-Here are the highlights of this release:
- - Java 27 support
- - Maven mirror settings reuse
- - Linked problem locations in build output
-
-For more details see https://docs.gradle.org/9.8.1/release-notes.html
-
-Starting a Gradle Daemon (subsequent builds will be faster)
-
-> Configure project :app
-w: file:///home/runner/work/paintcraft/paintcraft/android/app/build.gradle.kts:37:5: 'fun BaseAppModuleExtension.kotlinOptions(configure: Action<KotlinJvmOptions>): Unit' is deprecated. The kotlinOptions types are deprecated, please migrate to the compilerOptions types. More details are here: https://kotl.in/u1r8ln.
-
-> Task :app:buildKotlinToolingMetadata
-> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
-> Task :app:preBuild UP-TO-DATE
-> Task :app:preReleaseBuild UP-TO-DATE
-> Task :app:checkReleaseAarMetadata
