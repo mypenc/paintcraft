@@ -1,0 +1,78 @@
+name: Web preview (GitHub Pages)
+
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - "android/**"
+      - "**.md"
+  workflow_dispatch:
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+env:
+  CARGO_TERM_COLOR: always
+  CARGO_INCREMENTAL: "0"
+  TRUNK_VERSION: 0.21.14
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Rust 1.95 with the wasm target
+        uses: dtolnay/rust-toolchain@master
+        with:
+          toolchain: "1.95"
+          targets: wasm32-unknown-unknown
+
+      - name: Cache Rust build
+        uses: Swatinem/rust-cache@v2
+        with:
+          key: web-preview
+          cache-all-crates: true
+          cache-on-failure: true
+
+      - name: Install trunk
+        run: |
+          curl --proto '=https' -fsSL "https://github.com/trunk-rs/trunk/releases/download/v${TRUNK_VERSION}/trunk-x86_64-unknown-linux-gnu.tar.gz" | tar -xz -C "$HOME/.cargo/bin" trunk
+          trunk --version
+
+      - name: Build the web preview
+        working-directory: apps/paintcraft-web
+        run: trunk build --release 2>&1 | tee /tmp/web.log
+
+      - name: Add the page for GitHub Pages
+        run: |
+          touch dist/paintcraft-web/.nojekyll
+          ls -lh dist/paintcraft-web
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/paintcraft-web
+
+      - name: Publish log
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: .github/scripts/push-log.sh web /tmp/web.log
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

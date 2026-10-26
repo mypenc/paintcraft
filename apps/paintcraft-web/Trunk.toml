@@ -1,0 +1,6 @@
+# Build with: trunk build --release   (from apps/paintcraft-web)
+[build]
+target = "index.html"
+dist = "../../dist/paintcraft-web"
+public_url = "./"
+filehash = true

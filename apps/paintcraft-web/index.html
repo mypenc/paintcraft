@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#1b1b1d">
+  <title>PaintCraft: phone UI preview</title>
+  <link data-trunk rel="rust" data-bin="paintcraft-web" data-cargo-profile="wasm-release" data-wasm-opt="s" data-weak-refs />
+  <style>
+    html, body { margin: 0; padding: 0; width: 100%; height: 100%; overflow: hidden; background: #0e0e10; overscroll-behavior: none; }
+    /* On a desktop the app sits in a phone-shaped column; on a phone it fills the screen. */
+    #phone { position: absolute; top: 0; bottom: 0; left: 50%; width: 100%; max-width: 440px; transform: translateX(-50%); background: #1b1b1d; }
+    #paintcraft_canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; outline: none; }
+    #paintcraft_loading { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center;
+      padding: 0 16px; text-align: center; color: #b8b8b8; font: 15px system-ui, sans-serif; pointer-events: none; }
+    #paintcraft_loading p { margin: 0 0 8px; max-width: 360px; line-height: 1.5; }
+    #paintcraft_banner { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; padding: 4px 8px; font: 11px system-ui, sans-serif;
+      color: #9a9a9e; text-align: center; background: rgba(0,0,0,.55); pointer-events: none; }
+  </style>
+</head>
+<body>
+  <div id="phone">
+    <canvas id="paintcraft_canvas"></canvas>
+    <div id="paintcraft_loading">
+      <p>Loading PaintCraft&hellip;</p>
+      <p>This is a browser preview of the Android app's interface. It needs a browser with WebGPU or WebGL2.</p>
+    </div>
+  </div>
+</body>
+</html>

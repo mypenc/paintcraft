@@ -1,0 +1,22 @@
+[package]
+name = "paintcraft-web"
+description = "PaintCraft in the browser: a preview of the phone interface (eframe web runner, WebGPU with WebGL2 fallback)"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+publish = false
+
+[[bin]]
+name = "paintcraft-web"
+path = "src/main.rs"
+
+# Browser-only: on other targets this is an empty program, so `cargo build --workspace` still works.
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+paintcraft-ui = { path = "../../crates/paintcraft-ui" }
+egui = { workspace = true }
+log = { workspace = true }
+eframe = { workspace = true, features = ["default_fonts", "wgpu"] }
+wasm-bindgen = "0.2"
+wasm-bindgen-futures = "0.4"
+js-sys = "0.3"
+web-sys = { version = "0.3", features = ["Window", "Document", "Element", "HtmlElement", "HtmlCanvasElement", "HtmlInputElement", "HtmlAnchorElement", "File", "FileList", "Blob", "BlobPropertyBag", "Url", "Event", "EventTarget", "Navigator", "Location", "console"] }
