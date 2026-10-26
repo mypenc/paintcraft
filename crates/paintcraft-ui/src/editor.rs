@@ -19,7 +19,7 @@ use crate::exporter::{self, Format};
 use crate::i18n::{self, t};
 use crate::icons::{self, Icon};
 use crate::store::Store;
-use crate::ui::{self, ACCENT, BAR, CANVAS_BG, PANEL, PANEL_DARK, PANEL_DEEP, SIDEBAR, TEXT, TEXT_DIM, toast};
+use crate::ui::{self, ACCENT, CANVAS_BG, PANEL, PANEL_DARK, PANEL_DEEP, SIDEBAR, TEXT, TEXT_DIM, toast};
 
 pub enum Exit {
     Gallery,
@@ -860,7 +860,7 @@ impl Editor {
     }
 
     fn handle_input(&mut self, ui: &mut Ui, ctx: &Context, rect: Rect) {
-        let (down, pressed, pos, multi, scroll, delta) = ui.input(|i| (i.pointer.primary_down(), i.pointer.primary_pressed(), i.pointer.latest_pos(), i.multi_touch(), i.raw_scroll_delta, i.pointer.delta()));
+        let (down, pressed, pos, multi, scroll, delta) = ui.input(|i| (i.pointer.primary_down(), i.pointer.primary_pressed(), i.pointer.latest_pos(), i.multi_touch(), i.smooth_scroll_delta, i.pointer.delta()));
         let over = pos.is_some_and(|p| rect.contains(p) && ctx.layer_id_at(p) == Some(ui.layer_id()));
         // Two fingers: pan and zoom, and drop any stroke the first finger began.
         if let Some(mt) = multi {
