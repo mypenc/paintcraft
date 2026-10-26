@@ -50,7 +50,10 @@ jobs:
 
       - name: Build the web preview
         working-directory: apps/paintcraft-web
-        run: trunk build --release 2>&1 | tee /tmp/web.log
+        shell: bash
+        run: |
+          set -o pipefail
+          trunk build --release 2>&1 | tee /tmp/web.log
 
       - name: Add the page for GitHub Pages
         run: |
@@ -63,6 +66,7 @@ jobs:
 
       - name: Publish log
         if: always()
+        continue-on-error: true
         env:
           GH_TOKEN: ${{ github.token }}
         run: .github/scripts/push-log.sh web /tmp/web.log

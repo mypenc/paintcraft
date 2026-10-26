@@ -77,14 +77,18 @@ jobs:
 
       # Step 1: Rust only. Finishes (and its cache is saved) independently of Gradle.
       - name: Build Rust library (arm64-v8a)
+        shell: bash
         run: |
+          set -o pipefail
           chmod +x android/scripts/build.sh
           android/scripts/build.sh --no-apk 2>&1 | tee /tmp/build.log
 
       # Step 2: package the APK.
       - name: Build release APK
         working-directory: android
+        shell: bash
         run: |
+          set -o pipefail
           CODE=$(( 1000 + ${{ github.run_number }} ))
           { if [ -x ./gradlew ]; then ./gradlew assembleRelease -PccVersionCode=$CODE; else gradle assembleRelease -PccVersionCode=$CODE; fi; } 2>&1 | tee -a /tmp/build.log
 
@@ -133,6 +137,7 @@ jobs:
 
       - name: Publish log
         if: always()
+        continue-on-error: true
         env:
           GH_TOKEN: ${{ github.token }}
         run: .github/scripts/push-log.sh android /tmp/build.log
