@@ -1,40 +1,57 @@
+117:e: The daemon has terminated unexpectedly on startup attempt #1 with error code: 0. The daemon process output:
+118-    1. Kotlin compile daemon is ready
+119:e: The daemon has terminated unexpectedly on startup attempt #2 with error code: 0. The daemon process output:
+120-    1. Kotlin compile daemon is ready
+121-Problems may have occurred during auto-selection of GC. The preferred GC is Parallel GC.
+122-If the problems persist, try adding the JVM option to the Kotlin daemon JVM arguments: -XX:-UseParallelGC.
+123-GC auto-selection logic is disabled temporary for the next daemon startup.
+124-
+125-> Task :app:compileReleaseJavaWithJavac NO-SOURCE
+126-> Task :app:generateReleaseLintVitalReportModel
+127-> Task :app:dexBuilderRelease
+128-> Task :app:mergeReleaseGlobalSynthetics
+129-> Task :app:processReleaseJavaRes
+130-> Task :app:mergeReleaseJavaResource
+131-> Task :app:mergeDexRelease
+132-> Task :app:compileReleaseArtProfile
+133-
 
 ==== TAIL ====
-> Task :app:processReleaseManifest
-> Task :app:processReleaseManifestForPackage
-> Task :app:javaPreCompileRelease
-> Task :app:extractProguardFiles
-> Task :app:mergeReleaseJniLibFolders
-> Task :app:processReleaseResources
-> Task :app:mergeReleaseNativeLibs
-> Task :app:desugarReleaseFileDependencies
-> Task :app:checkReleaseDuplicateClasses
 > Task :app:mergeReleaseStartupProfile
 
 > Task :app:stripReleaseDebugSymbols
 Unable to strip the following libraries, packaging them as they are: libpaintcraft_android.so.
 
-> Task :app:compileReleaseKotlin
-> Task :app:compileReleaseJavaWithJavac NO-SOURCE
-> Task :app:generateReleaseLintVitalReportModel
-> Task :app:mergeExtDexRelease
 > Task :app:extractReleaseNativeSymbolTables
-> Task :app:dexBuilderRelease
-> Task :app:mergeReleaseNativeDebugMetadata NO-SOURCE
 > Task :app:mergeReleaseArtProfile
-> Task :app:mergeReleaseGlobalSynthetics
+> Task :app:mergeReleaseNativeDebugMetadata NO-SOURCE
 > Task :app:mergeReleaseShaders
 > Task :app:compileReleaseShaders NO-SOURCE
 > Task :app:generateReleaseAssets UP-TO-DATE
 > Task :app:mergeReleaseAssets
 > Task :app:compressReleaseAssets
 > Task :app:extractReleaseVersionControlInfo
-> Task :app:processReleaseJavaRes
-> Task :app:optimizeReleaseResources
 > Task :app:collectReleaseDependencies
 > Task :app:sdkReleaseDependencyData
 > Task :app:writeReleaseAppMetadata
+> Task :app:optimizeReleaseResources
 > Task :app:writeReleaseSigningConfigVersions
+> Task :app:mergeExtDexRelease
+
+> Task :app:compileReleaseKotlin
+e: The daemon has terminated unexpectedly on startup attempt #1 with error code: 0. The daemon process output:
+    1. Kotlin compile daemon is ready
+e: The daemon has terminated unexpectedly on startup attempt #2 with error code: 0. The daemon process output:
+    1. Kotlin compile daemon is ready
+Problems may have occurred during auto-selection of GC. The preferred GC is Parallel GC.
+If the problems persist, try adding the JVM option to the Kotlin daemon JVM arguments: -XX:-UseParallelGC.
+GC auto-selection logic is disabled temporary for the next daemon startup.
+
+> Task :app:compileReleaseJavaWithJavac NO-SOURCE
+> Task :app:generateReleaseLintVitalReportModel
+> Task :app:dexBuilderRelease
+> Task :app:mergeReleaseGlobalSynthetics
+> Task :app:processReleaseJavaRes
 > Task :app:mergeReleaseJavaResource
 > Task :app:mergeDexRelease
 > Task :app:compileReleaseArtProfile
@@ -47,7 +64,7 @@ There are no .so files available to package in the APK for x86_64.
 > Task :app:lintVitalReportRelease
 > Task :app:lintVitalRelease
 > Task :app:assembleRelease
-gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_3-1792990339460.json
+gradle/actions: Writing build results to /home/runner/work/_temp/.gradle-actions/build-results/__run_3-1792990935158.json
 
 [Incubating] Problems report is available at: file:///home/runner/work/paintcraft/paintcraft/android/build/reports/problems/problems-report.html
 
@@ -57,6 +74,6 @@ You can use '--warning-mode all' to show the individual deprecation warnings and
 
 For more on this, please refer to https://docs.gradle.org/9.8.1/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
 
-BUILD SUCCESSFUL in 2m 7s
+BUILD SUCCESSFUL in 46s
 47 actionable tasks: 47 executed
 Consider enabling configuration cache to speed up this build: https://docs.gradle.org/9.8.1/userguide/configuration_cache_enabling.html
