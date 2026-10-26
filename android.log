@@ -1,0 +1,62 @@
+
+==== TAIL ====
+[1m[92m   Compiling[0m craft-winprint-gdi v0.1.0 (https://github.com/storytold/winprint.rs?rev=417ac3c4d14d3da5485a99c7d5ce8f05664ec312#417ac3c4)
+[1m[92m   Compiling[0m craft-print v0.1.0 (https://github.com/storytold/craft-libs?rev=3d37da389a3618ab9b76109da11416e9ca4ea719#3d37da38)
+[1m[92m   Compiling[0m type-map v0.5.1
+[1m[92m   Compiling[0m tempfile v3.27.0
+[1m[92m   Compiling[0m photocraft-io v0.15.1 (/home/runner/work/paintcraft/paintcraft/crates/io)
+[1m[92m   Compiling[0m photocraft-plugins v0.15.1 (/home/runner/work/paintcraft/paintcraft/crates/plugins)
+[1m[92m   Compiling[0m photocraft-ops v0.15.1 (/home/runner/work/paintcraft/paintcraft/crates/ops)
+[1m[92m   Compiling[0m chrono v0.4.45
+[1m[92m   Compiling[0m photocraft-ipp v0.15.1 (/home/runner/work/paintcraft/paintcraft/crates/ipp)
+[1m[92m   Compiling[0m photocraft-engine v0.15.1 (/home/runner/work/paintcraft/paintcraft/crates/engine)
+[1m[92m   Compiling[0m egui-wgpu v0.36.2
+[1m[92m   Compiling[0m egui-winit v0.36.2
+[1m[92m   Compiling[0m cesu8 v1.1.0
+[1m[92m   Compiling[0m pollster v1.0.1
+[1m[92m   Compiling[0m eframe v0.36.2
+[1m[92m   Compiling[0m jni v0.21.1
+[1m[92m   Compiling[0m paintcraft-ui v0.15.1 (/home/runner/work/paintcraft/paintcraft/crates/paintcraft-ui)
+[1m[33mwarning[0m[1m: unused import: `BAR`[0m
+  [1m[94m--> [0mcrates/paintcraft-ui/src/editor.rs:22:31
+   [1m[94m|[0m
+[1m[94m22[0m [1m[94m|[0m use crate::ui::{self, ACCENT, BAR, CANVAS_BG, PANEL, PANEL_DARK, PANEL_DEEP, SIDEBAR, TEXT, TEXT_DIM, toast};
+   [1m[94m|[0m                               [1m[33m^^^[0m
+   [1m[94m|[0m
+   [1m[94m= [0m[1mnote[0m: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
+
+[1m[91merror[E0609][0m[1m: no field `raw_scroll_delta` on type `&InputState`[0m
+   [1m[94m--> [0mcrates/paintcraft-ui/src/editor.rs:863:170
+    [1m[94m|[0m
+[1m[94m863[0m [1m[94m|[0m [1m[94m...[0med(), i.pointer.latest_pos(), i.multi_touch(), i.raw_scroll_delta, i.pointer.delta()));
+    [1m[94m|[0m                                                     [1m[91m^^^^^^^^^^^^^^^^[0m [1m[91munknown field[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1mnote[0m: available fields are: `raw`, `pointer`, `smooth_scroll_delta`, `pixels_per_point`, `max_texture_side` ... and 8 others
+
+[1mFor more information about this error, try `rustc --explain E0609`.[0m
+[1m[33mwarning[0m: `paintcraft-ui` (lib) generated 1 warning
+[1m[91merror[0m: could not compile `paintcraft-ui` (lib) due to 1 previous error; 1 warning emitted
+[1m[33mwarning[0m: build failed, waiting for other jobs to finish...
+note: If the build failed due to a missing target, you can run this command:
+note: 
+note:     rustup target install aarch64-linux-android
+
+Welcome to Gradle 9.8.1!
+
+Here are the highlights of this release:
+ - Java 27 support
+ - Maven mirror settings reuse
+ - Linked problem locations in build output
+
+For more details see https://docs.gradle.org/9.8.1/release-notes.html
+
+Starting a Gradle Daemon (subsequent builds will be faster)
+
+> Configure project :app
+w: file:///home/runner/work/paintcraft/paintcraft/android/app/build.gradle.kts:37:5: 'fun BaseAppModuleExtension.kotlinOptions(configure: Action<KotlinJvmOptions>): Unit' is deprecated. The kotlinOptions types are deprecated, please migrate to the compilerOptions types. More details are here: https://kotl.in/u1r8ln.
+
+> Task :app:buildKotlinToolingMetadata
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preReleaseBuild UP-TO-DATE
+> Task :app:checkReleaseAarMetadata
