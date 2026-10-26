@@ -1,19 +1,17 @@
-87:error from build pipeline
-88-
-89-Caused by:
-90-    0: HTML build pipeline failed (1 errors), showing first
-91-    1: error from asset pipeline
-92-    2: running cargo build
-93-    3: error during cargo build execution
-94-    4: cargo call to executable 'cargo' with args: '["build", "--target=wasm32-unknown-unknown", "--manifest-path", "/home/runner/work/paintcraft/paintcraft/apps/paintcraft-web/Cargo.toml", "--profile", "wasm-release", "--bin", "paintcraft-web"]' returned a bad status: exit status: 101
-95-2026-10-26T04:42:36.871669Z ERROR error from build pipeline
-96-2026-10-26T04:42:36.871678Z  INFO   1: HTML build pipeline failed (1 errors), showing first
-97-2026-10-26T04:42:36.871680Z  INFO   2: error from asset pipeline
-98-2026-10-26T04:42:36.871681Z  INFO   3: running cargo build
-99-2026-10-26T04:42:36.871682Z  INFO   4: error during cargo build execution
-100-2026-10-26T04:42:36.871684Z  INFO   5: cargo call to executable 'cargo' with args: '["build", "--target=wasm32-unknown-unknown", "--manifest-path", "/home/runner/work/paintcraft/paintcraft/apps/paintcraft-web/Cargo.toml", "--profile", "wasm-release", "--bin", "paintcraft-web"]' returned a bad status: exit status: 101
 
 ==== TAIL ====
+[1m[33mwarning[0m: `photocraft-plugins` (lib) generated 1 warning
+[1m[92m   Compiling[0m photocraft-io v0.15.1 (/home/runner/work/paintcraft/paintcraft/crates/io)
+[1m[92m   Compiling[0m photocraft-engine v0.15.1 (/home/runner/work/paintcraft/paintcraft/crates/engine)
+[1m[33mwarning[0m[1m: constant `MAX_FOLDER_LUTS` is never used[0m
+   [1m[94m--> [0mcrates/engine/src/adjust_cmds.rs:172:7
+    [1m[94m|[0m
+[1m[94m172[0m [1m[94m|[0m const MAX_FOLDER_LUTS: usize = 500;
+    [1m[94m|[0m       [1m[33m^^^^^^^^^^^^^^^[0m
+    [1m[94m|[0m
+    [1m[94m= [0m[1mnote[0m: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
+
+[1m[33mwarning[0m[1m: constant `MAX_FOLDER_LUT_BYTES` is never used[0m
    [1m[94m--> [0mcrates/engine/src/adjust_cmds.rs:174:7
     [1m[94m|[0m
 [1m[94m174[0m [1m[94m|[0m const MAX_FOLDER_LUT_BYTES: u64 = 64 << 20;
@@ -38,39 +36,27 @@
      [1m[94m|[0m                  [1m[33m^^^^^^^^^^^^^^^^^^^[0m
 
 [1m[92m   Compiling[0m paintcraft-ui v0.15.1 (/home/runner/work/paintcraft/paintcraft/crates/paintcraft-ui)
-[1m[33mwarning[0m[1m: unused import: `BAR`[0m
-  [1m[94m--> [0mcrates/paintcraft-ui/src/editor.rs:22:31
-   [1m[94m|[0m
-[1m[94m22[0m [1m[94m|[0m use crate::ui::{self, ACCENT, BAR, CANVAS_BG, PANEL, PANEL_DARK, PANEL_DEEP, SIDEBAR, TEXT, TEXT_DIM, toast};
-   [1m[94m|[0m                               [1m[33m^^^[0m
-   [1m[94m|[0m
-   [1m[94m= [0m[1mnote[0m: `#[warn(unused_imports)]` (part of `#[warn(unused)]`) on by default
-
-[1m[91merror[E0609][0m[1m: no field `raw_scroll_delta` on type `&InputState`[0m
-   [1m[94m--> [0mcrates/paintcraft-ui/src/editor.rs:863:170
+[1m[33mwarning[0m[1m: fields `fresh_panel` and `drawing_secs` are never read[0m
+   [1m[94m--> [0mcrates/paintcraft-ui/src/editor.rs:251:5
     [1m[94m|[0m
-[1m[94m863[0m [1m[94m|[0m [1m[94m...[0med(), i.pointer.latest_pos(), i.multi_touch(), i.raw_scroll_delta, i.pointer.delta()));
-    [1m[94m|[0m                                                     [1m[91m^^^^^^^^^^^^^^^^[0m [1m[91munknown field[0m
+[1m[94m203[0m [1m[94m|[0m pub struct Editor {
+    [1m[94m|[0m            [1m[94m------[0m [1m[94mfields in this struct[0m
+[1m[94m...[0m
+[1m[94m251[0m [1m[94m|[0m     fresh_panel: bool,
+    [1m[94m|[0m     [1m[33m^^^^^^^^^^^[0m
+[1m[94m...[0m
+[1m[94m255[0m [1m[94m|[0m     drawing_secs: f64,
+    [1m[94m|[0m     [1m[33m^^^^^^^^^^^^[0m
     [1m[94m|[0m
-    [1m[94m= [0m[1mnote[0m: available fields are: `raw`, `pointer`, `smooth_scroll_delta`, `pixels_per_point`, `max_texture_side` ... and 8 others
+    [1m[94m= [0m[1mnote[0m: `#[warn(dead_code)]` (part of `#[warn(unused)]`) on by default
 
-[1mFor more information about this error, try `rustc --explain E0609`.[0m
 [1m[33mwarning[0m: `paintcraft-ui` (lib) generated 1 warning
-[1m[91merror[0m: could not compile `paintcraft-ui` (lib) due to 1 previous error; 1 warning emitted
-[1m[33mwarning[0m: build failed, waiting for other jobs to finish...
 [1m[33mwarning[0m: `photocraft-engine` (lib) generated 5 warnings
-2026-10-26T04:42:36.871644Z ERROR ❌ error
-error from build pipeline
-
-Caused by:
-    0: HTML build pipeline failed (1 errors), showing first
-    1: error from asset pipeline
-    2: running cargo build
-    3: error during cargo build execution
-    4: cargo call to executable 'cargo' with args: '["build", "--target=wasm32-unknown-unknown", "--manifest-path", "/home/runner/work/paintcraft/paintcraft/apps/paintcraft-web/Cargo.toml", "--profile", "wasm-release", "--bin", "paintcraft-web"]' returned a bad status: exit status: 101
-2026-10-26T04:42:36.871669Z ERROR error from build pipeline
-2026-10-26T04:42:36.871678Z  INFO   1: HTML build pipeline failed (1 errors), showing first
-2026-10-26T04:42:36.871680Z  INFO   2: error from asset pipeline
-2026-10-26T04:42:36.871681Z  INFO   3: running cargo build
-2026-10-26T04:42:36.871682Z  INFO   4: error during cargo build execution
-2026-10-26T04:42:36.871684Z  INFO   5: cargo call to executable 'cargo' with args: '["build", "--target=wasm32-unknown-unknown", "--manifest-path", "/home/runner/work/paintcraft/paintcraft/apps/paintcraft-web/Cargo.toml", "--profile", "wasm-release", "--bin", "paintcraft-web"]' returned a bad status: exit status: 101
+[1m[92m   Compiling[0m paintcraft-web v0.15.1 (/home/runner/work/paintcraft/paintcraft/apps/paintcraft-web)
+[1m[92m    Finished[0m `wasm-release` profile [optimized] target(s) in 3m 05s
+2026-10-26T04:48:54.216583Z  INFO downloading wasm-bindgen version="0.2.129"
+2026-10-26T04:48:54.531940Z  INFO installing wasm-bindgen
+2026-10-26T04:48:58.065155Z  INFO downloading wasm-opt version="version_123"
+2026-10-26T04:48:58.591825Z  INFO installing wasm-opt
+2026-10-26T04:49:22.764911Z  INFO applying new distribution
+2026-10-26T04:49:22.765219Z  INFO ✅ success
